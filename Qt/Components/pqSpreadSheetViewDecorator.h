@@ -51,6 +51,10 @@ public:
   pqSpreadSheetViewDecorator(pqSpreadSheetView* view);
   ~pqSpreadSheetViewDecorator();
 
+public:
+  void setPrecision(int);
+  void setFixedRepresentation(bool);
+
 protected slots:
   void currentIndexChanged(pqOutputPort*);
   void showing(pqDataRepresentation*);
@@ -58,6 +62,7 @@ protected slots:
   void showToggleColumnPopupMenu();
   void updateColumnVisibility();
   void toggleCellConnectivity();
+  void toggleFixedRepresentation(bool);
   
 protected:
   pqSpreadSheetView* Spreadsheet;
